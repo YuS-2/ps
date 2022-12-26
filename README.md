@@ -3,7 +3,7 @@
 Целевой файл: 'calendar_YYYY_XXX-lang.txt', где YYYY - год, XXX - буквенный код страны, lang - язык исходного календаря.
 источник xml-календаря: http://xmlcalendar.ru/  https://github.com/xmlcalendar/xmlcalendar.github.io
 
-#script_calendar.ps1
+# script_calendar.ps1
 Пример работы со временем. Учет времени только в рабочее время (например 9:00 - 19:00), исключая выходные и праздничные дни по производственному календарю.
 В данном варианте использовались календари в текстовом виде, со списком выходных и праздничных дней. (http://xmlcalendar.ru/data/ru/2023/calendar.txt) (http://xmlcalendar.ru/)
 Пример запуска: .\script_calendar.ps1 -stime $(get-date("21.12.2022 19:50")) -etime $(get-date("22.12.2022 17:00"))

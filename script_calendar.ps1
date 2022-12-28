@@ -8,7 +8,7 @@ param (
 	[datetime]$etime = $(get-date("22.12.2022 8:00")),
 	[timespan]$startwork = $(new-timespan -h 9 -min 0),
 	[timespan]$endwork = $(new-timespan -h 19 -min 0),
-	[string]$calendarpath = '.\Calendars\KAZ'
+	[string]$calendarpath = '.\Calendars\KZ'
 )
 function get-timework {
 	param (
@@ -17,7 +17,7 @@ function get-timework {
 		[timespan]$start, # начало рабочего периода
 		[timespan]$end, # конец рабочего периода
 		# Каталог календарей в виде текстового списка (*.txt) с датами формата YYYY.MM.DD
-		[string]$pathcr = '.\Calendars\KAZ' 
+		[string]$pathcr = '.\Calendars\KZ' 
 	)
 	if ($ett -le $stt) {
 		write-host Ошибка! Проверьте данные '$stt - старт/ $ett - стоп' -for red

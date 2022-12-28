@@ -4,7 +4,7 @@ param(
 )
 function set-listnonworking {
 	param (
-		[string]$path = '.\calendars\kaz\calendar_2023_kaz.xml'
+		[string]$path = '.\calendars\kz\calendar_2023_kz.xml'
 	)
 	[xml]$xml = gc $path -enc utf8
 	$y = $xml.calendar.year

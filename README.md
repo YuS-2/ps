@@ -3,7 +3,7 @@
 Целевой файл: 'calendar_YYYY_XX-lang.txt', где YYYY - год, XX - двухбуквенный код страны, lang - язык исходного календаря.
 источник xml-календаря: http://xmlcalendar.ru/  https://github.com/xmlcalendar/xmlcalendar.github.io
 
-# holiday.ps1
+# holidays.ps1
 Формирует из календаря, формата xml, список праздничных и перенесенных дней (рабочие, сокращенные и выходные) в текстовом, понятном виде, за текущий год исходного календаря.
 Целевой файл: 'holidays_YYYY_XX-lang.txt', где YYYY - год, XX - двухбуквенный код страны, lang - язык исходного календаря.
 источник xml-календаря: http://xmlcalendar.ru/  https://github.com/xmlcalendar/xmlcalendar.github.io

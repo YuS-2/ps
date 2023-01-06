@@ -30,7 +30,7 @@ function get-holidays {
 		# выборка праздников и перенесенных из xml календаря
 		if ($xml.calendar.days.day.t[$i] -eq 1) {
 			$day = 'выходной день,'
-		} elseif ($xml.calendar.days.day.t[$i] -eq 1){
+		} elseif ($xml.calendar.days.day.t[$i] -eq 2){
 			$day = 'сокращенный рабочий день,'
 		} else {$day = 'рабочий день,'}
 		if($xml.calendar.days.day.h[$i]){

@@ -31,11 +31,13 @@ function get-holidays {
 		if ($xml.calendar.days.day.t[$i] -eq 1) {
 			$day = 'выходной день,'
 		} elseif ($xml.calendar.days.day.t[$i] -eq 2){
-			$day = 'сокращенный рабочий день,'
+			$day = 'сокращенный рабочий день'
 		} else {$day = 'рабочий день,'}
 		if($xml.calendar.days.day.h[$i]){
 			$title = ($xml.selectnodes("//holiday")|? id -eq $xml.calendar.days.day.h[$i]).title
 			$we += (get-date($y + '.' +$xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy") + ' - ' + $day + ' ' + $title
+		} elseif (!$xml.calendar.days.day.f[$i]) {
+			$we += (get-date($y + '.' + $xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy") + ' - ' + $day
 		} else {
 			$f = (get-date($y + '.' + $xml.calendar.days.day.f[$i])).tostring("dd.MM.yyyy")
 			$we += (get-date($y + '.' + $xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy") + ' - ' + $day + ' перенесен с ' + $f

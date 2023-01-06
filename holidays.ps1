@@ -24,8 +24,6 @@ function get-holidays {
 		return
 	}
 	$w,$h = @(1), @(2,3)
-	$start = get-date($($y + '.01.01'))
-	$end = get-date($($y + '.12.31'))
 	$x = $xml.calendar.days.day.d.count
 	$we = @()
 	for ($i=0;$i -lt $x;$i++){

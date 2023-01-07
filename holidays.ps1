@@ -35,12 +35,12 @@ function get-holidays {
 		} else {$day = 'рабочий день,'}
 		if($xml.calendar.days.day.h[$i]){
 			$title = ($xml.selectnodes("//holiday")|? id -eq $xml.calendar.days.day.h[$i]).title
-			$we += (get-date($y + '.' +$xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy") + ' - ' + $day + ' ' + $title
+			$we += (get-date($y + '.' +$xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy ddd") + ' - ' + $day + ' ' + $title
 		} elseif (!$xml.calendar.days.day.f[$i]) {
-			$we += (get-date($y + '.' + $xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy") + ' - ' + $day
+			$we += (get-date($y + '.' + $xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy ddd") + ' - ' + $day
 		} else {
-			$f = (get-date($y + '.' + $xml.calendar.days.day.f[$i])).tostring("dd.MM.yyyy")
-			$we += (get-date($y + '.' + $xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy") + ' - ' + $day + ' перенесен с ' + $f
+			$f = (get-date($y + '.' + $xml.calendar.days.day.f[$i])).tostring("dd.MM.yyyy ddd")
+			$we += (get-date($y + '.' + $xml.calendar.days.day.d[$i])).tostring("dd.MM.yyyy ddd") + ' - ' + $day + ' перенесен с ' + $f
 		}
 	}
 	$we|out-file $file -enc utf8
